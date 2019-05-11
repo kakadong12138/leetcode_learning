@@ -7,15 +7,13 @@ class Solution:
         start_index = 0
         end_index = len(height)-1
         maxArea = 0
-        while True:
+        while start_index < end_index:
             area = get_area(height,start_index,end_index)
             maxArea = max(maxArea,area)
             if height[start_index] < height[end_index]:
                 start_index+=1
             else:
                 end_index-=1
-            if start_index >=end_index:
-                break
         return maxArea
 
 s = Solution()
